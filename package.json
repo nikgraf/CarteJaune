@@ -1,0 +1,17 @@
+{
+  "name": "CarteJaune",
+  "version": "0.0.0",
+  "main": "main.js",
+  "author": null,
+  "dependencies": {
+    "babel-eslint": "^4.1.6",
+    "dateformat": "^1.0.12",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^3.1.0",
+    "eslint-plugin-react": "^3.15.0",
+    "react-native": "github:exponentjs/react-native#2016-01-02"
+  },
+  "scripts": {
+    "lint": "eslint ./"
+  }
+}
