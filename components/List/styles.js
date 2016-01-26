@@ -91,5 +91,13 @@ export default StyleSheet.create({
     fontSize: 11,
     marginBottom: 8,
     color: '#666',
+  },
+  disclaimer: {
+    textAlign: 'center',
+    fontSize: 9,
+    marginBottom: 20,
+    color: '#666',
+    marginLeft: 100,
+    marginRight: 100,
   }
 });

@@ -83,6 +83,10 @@ export default class List extends Component {
         <Text style={styles.smallPromo}>
           Logo made by Freepik is licensed under CC BY 3.0
         </Text>
+        <Text style={styles.disclaimer}>
+          This App is designed for educational purposes only and is not intended
+          to serve as medical advice.
+        </Text>
       </View>
     );
   }
