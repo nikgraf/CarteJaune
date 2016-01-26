@@ -10,6 +10,8 @@ A Redux/ExponentJS (React Native) app to keep track of your vaccinations.
 
 see ExponentJS tutorial on https://exponentjs.com/
 
+![Carte Jaune App Preview](https://cloud.githubusercontent.com/assets/223045/12587184/2269b7ae-c408-11e5-9d6a-7071880ad36b.png)
+
 ## Video Demo
 
 [![Carte Jaune](http://img.youtube.com/vi/XaiVZ4RkZ6M/maxresdefault.jpg)](http://www.youtube.com/watch?v=XaiVZ4RkZ6M)
