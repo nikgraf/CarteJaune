@@ -23,7 +23,7 @@ export default class ChooseVaccine extends Component {
 
   renderItem(vaccine) {
     return (
-      <TouchableOpacity onPress={ () => this.props.onPick(vaccine.id) }>
+      <TouchableOpacity onPress={ () => this.props.pickVaccine(vaccine.id) }>
         <View style={styles.row}>
           <Text>{ vaccine.name }</Text>
           <Text style={styles.disease}>{ vaccine.diseases.join(', ')}</Text>
@@ -34,11 +34,14 @@ export default class ChooseVaccine extends Component {
 
   render() {
     return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderItem.bind(this)}
-        style={styles.listView}
-      />
+      <View style={styles.container}>
+        <Text style={styles.header}>Pick a Vaccine</Text>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderItem.bind(this)}
+          style={styles.listView}
+        />
+      </View>
     );
   }
 }

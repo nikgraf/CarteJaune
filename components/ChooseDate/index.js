@@ -4,7 +4,7 @@ import React, {
   View,
 } from 'react-native';
 import styles from './styles';
-import Button from '../../Button';
+import Button from '../Button';
 import DateInput from './DateInput';
 
 export default class ChooseDate extends Component {
@@ -28,12 +28,13 @@ export default class ChooseDate extends Component {
   }
 
   onPress() {
-    this.props.onSelectDate(this.state.vaccinationDate);
+    this.props.addVaccination(this.props.addForm.get('vaccineId'), this.state.vaccinationDate);
   }
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
+        <Text style={styles.header}>Pick the Vaccination Date</Text>
         <DateInput
           date={this.state.vaccinationDate}
           onDateChange={this.onUpdateDate.bind(this)}
@@ -44,7 +45,7 @@ export default class ChooseDate extends Component {
           onPress={ this.onPress.bind(this) }
           style={styles.addButton}
         >
-          <Text style={styles.button}>Add Vaccination</Text>
+          <Text>Add Vaccination</Text>
         </Button>
       </View>
     );

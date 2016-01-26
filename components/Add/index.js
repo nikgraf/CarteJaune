@@ -11,19 +11,19 @@ import ChooseDate from './ChooseDate';
 export default class Add extends Component {
 
   state = {
-    vaccinationKey: null,
+    vaccineId: null,
     step: 0,
   };
 
   onAdd(date) {
-    const vaccine = vaccines.get(this.state.vaccinationKey);
+    const vaccine = vaccines.get(this.state.vaccineId);
     const vaccineWithDate = vaccine.set('vaccinationDate', date);
-    this.props.onAdd(this.state.vaccinationKey, vaccineWithDate);
+    this.props.addVaccination(this.state.vaccineId, vaccineWithDate);
   }
 
-  onPickVaccine(vaccinationKey) {
+  onPickVaccine(vaccineId) {
     this.setState({
-      vaccinationKey,
+      vaccineId,
       step: 1,
     });
   }

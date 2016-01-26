@@ -20,20 +20,20 @@ export default class List extends Component {
 
   componentWillMount() {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(this.props.vaccines.toJS())
+      dataSource: this.state.dataSource.cloneWithRows(this.props.vaccinations.toJS())
     });
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(nextProps.vaccines.toJS())
+      dataSource: this.state.dataSource.cloneWithRows(nextProps.vaccinations.toJS())
     });
   }
 
   getDisease() {
-    const diseases = this.props.vaccines
+    const diseases = this.props.vaccinations
       .toList()
-      .map((vaccine) => vaccine.get('diseases'))
+      .map((vaccination) => vaccination.getIn(['vaccine', 'diseases']))
       .flatten(true);
     return diseases
       .toSet()
@@ -68,9 +68,9 @@ export default class List extends Component {
   renderFooter() {
     return (
       <View>
-        {this.props.vaccines.size ? this.renderDiseases() : null}
+        {this.props.vaccinations.size ? this.renderDiseases() : null}
         <Button
-          onPress={this.props.onPressToAdd.bind(this)}
+          onPress={this.props.switchToChooseVaccineRoute}
           style={styles.addButton}
         >
             <Text style={styles.plus}>+</Text>
@@ -80,13 +80,13 @@ export default class List extends Component {
     );
   }
 
-  renderItem(vaccine) {
+  renderItem(vaccination) {
     return (
       <Card style={styles.container}>
-        <Text style={styles.name}>{vaccine.name}</Text>
-        <Text style={styles.disease}>{ vaccine.diseases.join(', ')}</Text>
+        <Text style={styles.name}>{vaccination.vaccine.name}</Text>
+        <Text style={styles.disease}>{ vaccination.vaccine.diseases.join(', ')}</Text>
         <Text style={styles.vaccinationDate}>
-          {dateformat(vaccine.vaccinationDate, 'ddd, dS mmmm, yyyy')}
+          {dateformat(vaccination.date, 'ddd, dS mmmm, yyyy')}
         </Text>
       </Card>
     );

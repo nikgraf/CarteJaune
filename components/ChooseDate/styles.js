@@ -9,13 +9,6 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
   },
-  input: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginLeft: 20,
-    marginRight: 20,
-  },
   header: {
     fontSize: 24,
     paddingBottom: 20,

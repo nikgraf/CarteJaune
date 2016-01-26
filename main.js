@@ -2,49 +2,29 @@ import React, {
   AppRegistry,
   Component,
 } from 'react-native';
-import {
-  fromJS
-} from 'immutable';
+import configureStore from './store/configureStore';
+import { Provider } from 'react-redux/native';
+import { Router, Route } from 'react-native-router-flux';
+import ChooseVaccine from './containers/ChooseVaccine';
+import ChooseDate from './containers/ChooseDate';
+import List from './containers/List';
 
-import Add from './components/Add';
-import List from './components/List';
-import { ADD_VIEW, LIST_VIEW } from './constants/views';
+const store = configureStore();
 
-const yourVaccines = fromJS({});
-
-class App extends Component {
-
-  state = {
-    currentView: LIST_VIEW,
-    yourVaccines,
-  };
-
-  _onAdd(id, vaccine) {
-    const vaccines = this.state.yourVaccines.set(id, vaccine);
-    this.setState({
-      currentView: LIST_VIEW,
-      yourVaccines: vaccines,
-    });
-  }
-
-  _onPressAdd() {
-    this.setState({
-      currentView: ADD_VIEW,
-    });
-  }
-
+class ProviderWrapper extends Component {
   render() {
-    if (this.state.currentView === ADD_VIEW) {
-      return <Add onAdd={ this._onAdd.bind(this) } />;
-    }
-
     return (
-      <List
-        onPressToAdd={ this._onPressAdd.bind(this) }
-        vaccines={this.state.yourVaccines}
-      />
+      <Provider store={store}>
+        { () => (
+          <Router hideNavBar name="root">
+            <Route name="list" component={List} title="List"/>
+            <Route name="chooseVaccine" component={ChooseVaccine} title="Pick a Vaccine" />
+            <Route name="chooseDate" component={ChooseDate} title="Pick a Date"/>
+          </Router>
+        )}
+      </Provider>
     );
   }
 }
 
-AppRegistry.registerComponent('main', () => App);
+AppRegistry.registerComponent('main', () => ProviderWrapper);
