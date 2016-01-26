@@ -12,7 +12,7 @@ see ExponentJS tutorial on https://exponentjs.com/
 
 ## Video Demo
 
-[![Carte Jaune](http://img.youtube.com/vi/XaiVZ4RkZ6M/0.jpg)](http://www.youtube.com/watch?v=XaiVZ4RkZ6M)
+[![Carte Jaune](http://img.youtube.com/vi/XaiVZ4RkZ6M/maxresdefault.jpg)](http://www.youtube.com/watch?v=XaiVZ4RkZ6M)
 
 ## Support
 
