@@ -25,6 +25,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
+    marginTop: 20,
   },
   headerText: {
     fontSize: 32,
@@ -64,7 +65,7 @@ export default StyleSheet.create({
   addButton: {
     marginLeft: 20,
     marginRight: 20,
-    marginTop: 30,
+    marginTop: 50,
     paddingTop: 30,
     paddingBottom: 30,
   },
@@ -77,5 +78,17 @@ export default StyleSheet.create({
     color: '#999',
     fontSize: 10,
     marginBottom: 10,
+  },
+  promo: {
+    textAlign: 'center',
+    fontSize: 13,
+    marginTop: 70,
+    color: '#666',
+  },
+  smallPromo: {
+    textAlign: 'center',
+    fontSize: 11,
+    marginTop: 8,
+    color: '#666',
   }
 });

@@ -76,6 +76,13 @@ export default class List extends Component {
             <Text style={styles.plus}>+</Text>
             <Text style={styles.addText}>Add Vaccination</Text>
         </Button>
+        <Text style={styles.promo}>Made with ♡ by Nik Graf</Text>
+        <Text style={styles.smallPromo}>
+          Open Source Code: https://www.github.com/nikgraf/CarteJaune
+        </Text>
+        <Text style={styles.smallPromo}>
+          Logo made by Freepik is licensed under CC BY 3.0
+        </Text>
       </View>
     );
   }
