@@ -83,12 +83,13 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 13,
     marginTop: 70,
+    marginBottom: 8,
     color: '#666',
   },
   smallPromo: {
     textAlign: 'center',
     fontSize: 11,
-    marginTop: 8,
+    marginBottom: 8,
     color: '#666',
   }
 });
