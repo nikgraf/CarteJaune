@@ -1,7 +1,7 @@
 import { OrderedMap, Map } from 'immutable';
 import {
   ADD_VACCINATION,
-  REMOVE_VACCINATION,
+  RECEIVE_VACCINATIONS,
 } from '../constants/actions';
 import uuid from 'uuid';
 
@@ -12,8 +12,8 @@ export default (state = OrderedMap(), action) => {
         id: action.vaccineId,
         date: action.vaccinationDate,
       }));
-    case REMOVE_VACCINATION:
-      return state;
+    case RECEIVE_VACCINATIONS:
+      return action.vaccinations;
     default:
       return state;
   }
