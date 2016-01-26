@@ -4,7 +4,7 @@ import React, {
   Text,
   View,
 } from 'react-native';
-import dateFormat from 'dateformat';
+import dateformat from 'dateformat';
 import styles from './styles';
 import Logo from '../Logo';
 import Button from '../Button';
@@ -86,7 +86,7 @@ export default class List extends Component {
         <Text style={styles.name}>{vaccine.name}</Text>
         <Text style={styles.disease}>{ vaccine.diseases.join(', ')}</Text>
         <Text style={styles.vaccinationDate}>
-          {dateFormat(vaccine.vaccinationDate, 'ddd, dS mmmm, yyyy')}
+          {dateformat(vaccine.vaccinationDate, 'ddd, dS mmmm, yyyy')}
         </Text>
       </Card>
     );

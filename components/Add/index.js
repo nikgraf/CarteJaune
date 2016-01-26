@@ -2,34 +2,26 @@ import React, {
   Component,
   Text,
   View,
-  DatePickerIOS,
 } from 'react-native';
 import styles from './styles';
 import ChooseVaccine from './ChooseVaccine';
 import vaccines from '../../constants/vaccines';
-import Button from '../Button';
+import ChooseDate from './ChooseDate';
 
 export default class Add extends Component {
 
   state = {
     vaccinationKey: null,
-    vaccinationDate: new Date(),
-    step: 0
+    step: 0,
   };
 
-  updateVaccinationDate(date) {
-    this.setState({
-      vaccinationDate: date,
-    });
-  }
-
-  _handlePress() {
+  onAdd(date) {
     const vaccine = vaccines.get(this.state.vaccinationKey);
-    const vaccineWithDate = vaccine.set('vaccinationDate', this.state.vaccinationDate);
+    const vaccineWithDate = vaccine.set('vaccinationDate', date);
     this.props.onAdd(this.state.vaccinationKey, vaccineWithDate);
   }
 
-  _onPick(vaccinationKey) {
+  onPickVaccine(vaccinationKey) {
     this.setState({
       vaccinationKey,
       step: 1,
@@ -54,7 +46,7 @@ export default class Add extends Component {
         <View style={styles.container}>
           <Text style={styles.header}>Pick a Vaccine</Text>
           <ChooseVaccine
-            onPick={this._onPick.bind(this)}
+            onPick={this.onPickVaccine.bind(this)}
             vaccines={vaccines}
           />
         </View>
@@ -63,18 +55,7 @@ export default class Add extends Component {
       return (
         <View style={styles.container}>
           <Text style={styles.header}>Pick the Vaccination Date</Text>
-          <DatePickerIOS
-            date={this.state.vaccinationDate}
-            mode="date"
-            style={styles.datepicker}
-            onDateChange={this.updateVaccinationDate.bind(this)}
-          />
-          <Button
-            onPress={ this._handlePress.bind(this) }
-            style={styles.addButton}
-          >
-              <Text style={styles.button}>Add Vaccination</Text>
-          </Button>
+          <ChooseDate onSelectDate={this.onAdd.bind(this)} />
         </View>
       );
     }

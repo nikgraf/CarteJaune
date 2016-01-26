@@ -10,25 +10,32 @@ export default class Button extends Component {
     active: false,
   };
 
-  _onHighlight() {
+  onHighlight() {
     this.setState({ active: true });
   }
 
-  _onUnhighlight() {
+  onUnhighlight() {
     this.setState({ active: false });
+  }
+
+  onPress() {
+    if (!this.props.disabled) {
+      this.props.onPress();
+    }
   }
 
   render() {
     const colorStyle = {
-      color: this.state.active ? '#fff' : '#000',
+      color: this.props.disabled ? '#ccc' : '#000',
     };
+    const underlayColor = this.props.disabled ? '#E0F4FF' : '#B8CCD8';
     return (
       <TouchableHighlight
-        onHideUnderlay={this._onUnhighlight.bind(this)}
-        onPress={this.props.onPress.bind(this)}
-        onShowUnderlay={this._onHighlight.bind(this)}
+        onHideUnderlay={this.onUnhighlight.bind(this)}
+        onPress={this.onPress.bind(this)}
+        onShowUnderlay={this.onHighlight.bind(this)}
         style={[styles.button, this.props.style]}
-        underlayColor="#B8CCD8"
+        underlayColor={underlayColor}
       >
         <Text style={[styles.buttonText, colorStyle]}>{this.props.children}</Text>
       </TouchableHighlight>
