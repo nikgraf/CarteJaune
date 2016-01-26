@@ -5,7 +5,7 @@ import { KEY } from '../constants/storage';
 import addVaccinationSuccess from '../actions/addVaccinationSuccess';
 import receiveVaccinations from '../actions/receiveVaccinations';
 import fetchVaccinations from '../actions/fetchVaccinations';
-import { fromJS } from 'immutable';
+import { fromJS, OrderedMap } from 'immutable';
 
 const executeAddVaccinations = (data) => {
   return AsyncStorage.setItem(KEY, JSON.stringify(data.toJS()));
@@ -21,7 +21,10 @@ export function* addVaccinationAsync(getState) {
 
 const executeFetchVaccinations = () => {
   return AsyncStorage.getItem(KEY)
-    .then((result) => fromJS(JSON.parse(result)));
+    .then((result) => {
+      if (result === null) return OrderedMap();
+      return fromJS(JSON.parse(result));
+    });
 };
 
 export function* fetchVaccinationsAsync() {
