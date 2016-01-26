@@ -1,6 +1,7 @@
 import React, {
   AppRegistry,
   Component,
+  Navigator,
 } from 'react-native';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux/native';
@@ -18,8 +19,18 @@ class ProviderWrapper extends Component {
         { () => (
           <Router hideNavBar name="root">
             <Route name="list" component={List} title="List"/>
-            <Route name="chooseVaccine" component={ChooseVaccine} title="Pick a Vaccine" />
-            <Route name="chooseDate" component={ChooseDate} title="Pick a Date"/>
+            <Route
+              name="chooseVaccine"
+              component={ChooseVaccine}
+              title="Pick a Vaccine"
+              sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
+            />
+            <Route
+              name="chooseDate"
+              component={ChooseDate}
+              title="Pick a Date"
+              sceneConfig={Navigator.SceneConfigs.FloatFromRight}
+            />
           </Router>
         )}
       </Provider>
