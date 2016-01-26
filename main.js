@@ -9,6 +9,7 @@ import { Router, Route } from 'react-native-router-flux';
 import ChooseVaccine from './containers/ChooseVaccine';
 import ChooseDate from './containers/ChooseDate';
 import List from './containers/List';
+import Detail from './containers/Detail';
 
 const store = configureStore();
 
@@ -29,6 +30,12 @@ class ProviderWrapper extends Component {
               name="chooseDate"
               component={ChooseDate}
               title="Pick a Date"
+              sceneConfig={Navigator.SceneConfigs.FloatFromRight}
+            />
+            <Route
+              name="detail"
+              component={Detail}
+              title="Detail"
               sceneConfig={Navigator.SceneConfigs.FloatFromRight}
             />
           </Router>

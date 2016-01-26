@@ -2,6 +2,7 @@ import React, {
   Component,
   ListView,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import dateformat from 'dateformat';
@@ -93,13 +94,15 @@ export default class List extends Component {
 
   renderItem(vaccination) {
     return (
-      <Card style={styles.container}>
-        <Text style={styles.name}>{vaccination.vaccine.name}</Text>
-        <Text style={styles.disease}>{ vaccination.vaccine.diseases.join(', ')}</Text>
-        <Text style={styles.vaccinationDate}>
-          {dateformat(vaccination.date, 'ddd, dS mmmm, yyyy')}
-        </Text>
-      </Card>
+      <TouchableOpacity onPress={ () => this.props.switchToDetailRoute(vaccination.listId) }>
+        <Card style={styles.container}>
+          <Text style={styles.name}>{vaccination.vaccine.name}</Text>
+          <Text style={styles.disease}>{ vaccination.vaccine.diseases.join(', ')}</Text>
+          <Text style={styles.vaccinationDate}>
+            {dateformat(vaccination.date, 'ddd, dS mmmm, yyyy')}
+          </Text>
+        </Card>
+      </TouchableOpacity>
     );
   }
 
@@ -107,7 +110,7 @@ export default class List extends Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderItem}
+        renderRow={this.renderItem.bind(this)}
         style={styles.listView}
         renderHeader={this.renderHeader}
         renderFooter={this.renderFooter.bind(this)}

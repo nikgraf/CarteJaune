@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import List from '../components/List';
 import switchToChooseVaccineRoute from '../actions/switchToChooseVaccineRoute';
+import switchToDetailRoute from '../actions/switchToDetailRoute';
 import vaccinations from '../selectors/vaccinations';
 import vaccines from '../selectors/vaccines';
 
 const actions = {
   switchToChooseVaccineRoute,
+  switchToDetailRoute,
 };
 
 const selectors = {

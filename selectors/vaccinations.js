@@ -6,8 +6,10 @@ const shallowVaccinations = (state) => state.get('vaccinations');
 export default createSelector(
   [shallowVaccinations, shallowVaccines],
   (vaccinations, vaccines) => {
-    return vaccinations.map(vaccination => {
-      return vaccination.set('vaccine', vaccines.get(vaccination.get('id')));
+    return vaccinations.map((vaccination, id) => {
+      return vaccination
+        .set('vaccine', vaccines.get(vaccination.get('id')))
+        .set('listId', id);
     });
   }
 );
