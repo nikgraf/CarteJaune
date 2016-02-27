@@ -5,7 +5,7 @@ import sagas from '../sagas';
 import createLogger from 'redux-logger';
 
 const loggerMiddleware = createLogger({
-  stateTransformer: state => state.toJS()
+  stateTransformer: state => state.toJS(),
 });
 
 const createStoreWithMiddleware = applyMiddleware(

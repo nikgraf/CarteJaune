@@ -10,7 +10,7 @@ const actions = {
 };
 
 const selectors = {
-  addForm
+  addForm,
 };
 
 export default class ChooseDateContainer extends Component {

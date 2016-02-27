@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
   logo: {
     width: 40,
-    height: 40
+    height: 40,
   },
   listView: {
     paddingTop: 20,
@@ -54,7 +54,7 @@ export default StyleSheet.create({
     paddingRight: 20,
   },
   diseasesText: {
-    lineHeight: 24
+    lineHeight: 24,
   },
   label: {
     paddingTop: 20,
@@ -99,5 +99,5 @@ export default StyleSheet.create({
     color: '#666',
     marginLeft: 100,
     marginRight: 100,
-  }
+  },
 });
