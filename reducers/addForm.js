@@ -4,7 +4,7 @@ import {
   SWITCH_TO_CHOOSE_VACCINE_ROUTE,
 } from '../constants/actions';
 
-export default (state = Map({}), action) => {
+export default (state = Map(), action) => {
   switch (action.type) {
     case SWITCH_TO_CHOOSE_VACCINE_ROUTE:
       return state.delete('vaccineId');
