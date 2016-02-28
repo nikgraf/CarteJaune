@@ -35,10 +35,10 @@ export default StyleSheet.create({
   },
   footer: {
     alignItems: 'center',
-    paddingTop: 10
+    paddingTop: 10,
   },
   disease: {
     color: '#999',
     fontSize: 10,
-  }
+  },
 });

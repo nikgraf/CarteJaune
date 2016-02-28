@@ -142,7 +142,7 @@ const vaccines = fromJS([
     diseases: [
       'Tetanus (Lockjaw)',
       'Pertussis (Whooping Cough)',
-      'Diphtheria'
+      'Diphtheria',
     ],
   },
   {
@@ -167,7 +167,7 @@ const vaccines = fromJS([
       'Tetanus (Lockjaw)',
       'Polio',
       'Pertussis (Whooping Cough)',
-      'Diphtheria'
+      'Diphtheria',
     ],
   },
   {
@@ -178,7 +178,7 @@ const vaccines = fromJS([
       'Polio',
       'Hepatitis B',
       'Pertussis (Whooping Cough)',
-      'Diphtheria'
+      'Diphtheria',
     ],
   },
   {
@@ -189,7 +189,7 @@ const vaccines = fromJS([
       'Polio',
       'Haemophilus influenzae type b (Hib)',
       'Pertussis (Whooping Cough)',
-      'Diphtheria'
+      'Diphtheria',
     ],
   },
   {

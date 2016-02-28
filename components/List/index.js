@@ -21,13 +21,13 @@ export default class List extends Component {
 
   componentWillMount() {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(this.props.vaccinations.toJS())
+      dataSource: this.state.dataSource.cloneWithRows(this.props.vaccinations.toJS()),
     });
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(nextProps.vaccinations.toJS())
+      dataSource: this.state.dataSource.cloneWithRows(nextProps.vaccinations.toJS()),
     });
   }
 

@@ -17,7 +17,7 @@ export default class ChooseVaccine extends Component {
 
   componentWillMount() {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(this.props.vaccines.toJS())
+      dataSource: this.state.dataSource.cloneWithRows(this.props.vaccines.toJS()),
     });
   }
 
