@@ -224,8 +224,8 @@ const vaccines = fromJS([
   },
 ]);
 
-const keyedVaccines = vaccines.reduce((result, item) => {
-  return result.set(item.get('id'), item);
-}, OrderedMap());
+const keyedVaccines = vaccines.reduce((result, item) => (
+  result.set(item.get('id'), item)
+), OrderedMap());
 
 export default keyedVaccines.sortBy(vaccine => vaccine.get('name').toLowerCase());

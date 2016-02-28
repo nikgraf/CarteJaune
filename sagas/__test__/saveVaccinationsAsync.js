@@ -10,11 +10,10 @@ import {
 import addVaccinationSuccess from '../../actions/addVaccinationSuccess';
 
 describe('saveVaccinationAsync', () => {
-  let vaccinations;
+  const vaccinations = Map({ 1: 'a' });
   let getState;
 
   beforeEach(() => {
-    vaccinations = Map({ 1: 'a' });
     getState = () => Map({ vaccinations });
   });
 

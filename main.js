@@ -19,7 +19,7 @@ class ProviderWrapper extends Component {
       <Provider store={store}>
         { () => (
           <Router hideNavBar name="root">
-            <Route name="list" component={List} title="List"/>
+            <Route name="list" component={List} title="List" />
             <Route
               name="chooseVaccine"
               component={ChooseVaccine}

@@ -8,9 +8,9 @@ import {
 import addVaccinationSuccess from '../actions/addVaccinationSuccess';
 import { KEY } from '../constants/storage';
 
-export const executeSaveVaccinations = (data) => {
-  return AsyncStorage.setItem(KEY, JSON.stringify(data.toJS()));
-};
+export const executeSaveVaccinations = (data) => (
+  AsyncStorage.setItem(KEY, JSON.stringify(data.toJS()))
+);
 
 export default function* saveVaccinationsAsync(getState) {
   while (yield take(ADD_VACCINATION)) {

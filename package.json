@@ -34,8 +34,5 @@
     "lint": "eslint ./",
     "test": "node_modules/.bin/mocha --compilers js:babel-core/register --require testHelper.js **/__test__/*.js",
     "test:watch": "npm test -- --watch"
-  },
-  "devDependencies": {
-    "babel-eslint": "^5.0.0-beta10"
   }
 }

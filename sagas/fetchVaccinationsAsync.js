@@ -9,13 +9,13 @@ import receiveVaccinations from '../actions/receiveVaccinations';
 import { KEY } from '../constants/storage';
 import { fromJS, OrderedMap } from 'immutable';
 
-export const executeFetchVaccinations = () => {
-  return AsyncStorage.getItem(KEY)
+export const executeFetchVaccinations = () => (
+  AsyncStorage.getItem(KEY)
     .then((result) => {
       if (result === null) return OrderedMap();
       return fromJS(JSON.parse(result));
-    });
-};
+    })
+);
 
 export default function* fetchVaccinationsAsync() {
   while (yield take(FETCH_VACCINATIONS)) {

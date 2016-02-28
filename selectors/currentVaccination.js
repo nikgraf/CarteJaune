@@ -5,7 +5,5 @@ const currentId = (state) => state.get('currentVaccination');
 
 export default createSelector(
   [vaccinations, currentId],
-  (list, id) => {
-    return list.get(id);
-  }
+  (list, id) => list.get(id)
 );
