@@ -2,7 +2,7 @@ import { AsyncStorage } from 'react-native';
 import { FETCH_VACCINATIONS } from '../constants/actions';
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import receiveVaccinations from '../actions/receiveVaccinations';
+import fetchVaccinationsSuccess from '../actions/fetchVaccinationsSuccess';
 import { KEY } from '../constants/storage';
 import { fromJS, OrderedMap } from 'immutable';
 
@@ -23,7 +23,7 @@ export const executeFetchVaccinations = () => (
 export function* fetchVaccinations() {
   try {
     const vaccinations = yield call(executeFetchVaccinations);
-    yield put(receiveVaccinations(vaccinations));
+    yield put(fetchVaccinationsSuccess(vaccinations));
   } catch (error) {
     console.log(error.message); // eslint-disable-line
   }

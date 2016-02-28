@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import reducer from '../vaccinations';
 import {
   ADD_VACCINATION,
-  RECEIVE_VACCINATIONS,
+  FETCH_VACCINATIONS_SUCCESS,
 } from '../../constants/actions';
 
 describe('vaccinations', () => {
@@ -24,9 +24,9 @@ describe('vaccinations', () => {
     expect(nextState.first().get('date')).to.equal(444);
   });
 
-  it('sets the state to the vavvinations from the RECEIVE_VACCINATIONS action', () => {
+  it('sets the state to the vavvinations from the FETCH_VACCINATIONS_SUCCESS action', () => {
     const nextState = reducer(4444, {
-      type: RECEIVE_VACCINATIONS,
+      type: FETCH_VACCINATIONS_SUCCESS,
       vaccinations: OrderedMap({ id: 1, date: 3 }),
     });
     const expected = OrderedMap({ id: 1, date: 3 });

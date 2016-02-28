@@ -6,7 +6,7 @@ import {
 } from '../fetchVaccinations';
 import { FETCH_VACCINATIONS } from '../../constants/actions';
 import { call, put, take } from 'redux-saga/effects';
-import receiveVaccinations from '../../actions/receiveVaccinations';
+import fetchVaccinationsSuccess from '../../actions/fetchVaccinationsSuccess';
 
 describe('fetchVaccination', () => {
   describe('watchVaccination', () => {
@@ -23,7 +23,7 @@ describe('fetchVaccination', () => {
       const expectCall = generator.next().value;
       expect(expectCall).to.deep.equal(call(executeFetchVaccinations));
       const expectPut = generator.next().value;
-      expect(expectPut).to.deep.equal(put(receiveVaccinations()));
+      expect(expectPut).to.deep.equal(put(fetchVaccinationsSuccess()));
     });
   });
 });
