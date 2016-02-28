@@ -1,4 +1,3 @@
-import { Map } from 'immutable';
 import { expect } from 'chai';
 import reducer from '../currentVaccination';
 import {
