@@ -1,9 +1,6 @@
 import { Map } from 'immutable';
 import { expect } from 'chai';
-import {
-  fetchVaccinationsAsync,
-  executeFetchVaccinations,
-} from '../fetchVaccinationsAsync';
+import fetchVaccinationsAsync, { executeFetchVaccinations } from '../fetchVaccinationsAsync';
 import { FETCH_VACCINATIONS } from '../../constants/actions';
 import {
   call,

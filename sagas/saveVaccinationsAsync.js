@@ -12,7 +12,7 @@ export const executeSaveVaccinations = (data) => {
   return AsyncStorage.setItem(KEY, JSON.stringify(data.toJS()));
 };
 
-export function* saveVaccinationsAsync(getState) {
+export default function* saveVaccinationsAsync(getState) {
   while (yield take(ADD_VACCINATION)) {
     const vaccinations = getState().get('vaccinations');
     yield call(executeSaveVaccinations, vaccinations);

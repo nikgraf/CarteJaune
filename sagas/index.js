@@ -1,13 +1,7 @@
-// import { AsyncStorage } from 'react-native';
-import { put, fork } from 'redux-saga';
-import fetchVaccinations from '../actions/fetchVaccinations';
-
-import { saveVaccinationsAsync } from './saveVaccinationsAsync';
-import { fetchVaccinationsAsync } from './fetchVaccinationsAsync';
-
-export function* startup() {
-  yield put(fetchVaccinations());
-}
+import { fork } from 'redux-saga';
+import saveVaccinationsAsync from './saveVaccinationsAsync';
+import fetchVaccinationsAsync from './fetchVaccinationsAsync';
+import startup from './startup';
 
 export default function* root(getState) {
   yield fork(saveVaccinationsAsync, getState);

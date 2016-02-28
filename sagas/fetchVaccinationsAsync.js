@@ -17,7 +17,7 @@ export const executeFetchVaccinations = () => {
     });
 };
 
-export function* fetchVaccinationsAsync() {
+export default function* fetchVaccinationsAsync() {
   while (yield take(FETCH_VACCINATIONS)) {
     const vaccinations = yield call(executeFetchVaccinations);
     yield put(receiveVaccinations(vaccinations));
