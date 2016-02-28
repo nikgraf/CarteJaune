@@ -1,4 +1,4 @@
-// import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from 'react-native';
 import { FETCH_VACCINATIONS } from '../constants/actions';
 import {
   call,
@@ -10,7 +10,6 @@ import { KEY } from '../constants/storage';
 import { fromJS, OrderedMap } from 'immutable';
 
 export const executeFetchVaccinations = () => {
-  // return 4;
   return AsyncStorage.getItem(KEY)
     .then((result) => {
       if (result === null) return OrderedMap();

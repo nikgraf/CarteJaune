@@ -18,6 +18,7 @@
     "mocha": "^2.4.5",
     "moment": "^2.11.2",
     "react-native": "github:exponentjs/react-native#2016-01-02",
+    "react-native-mock": "0.0.6",
     "react-native-router-flux": "^2.3.6",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1",

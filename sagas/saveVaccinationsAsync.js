@@ -1,4 +1,4 @@
-// import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from 'react-native';
 import { ADD_VACCINATION } from '../constants/actions';
 import {
   call,
@@ -9,8 +9,7 @@ import addVaccinationSuccess from '../actions/addVaccinationSuccess';
 import { KEY } from '../constants/storage';
 
 export const executeSaveVaccinations = (data) => {
-  return 2;
-  // return AsyncStorage.setItem(KEY, JSON.stringify(data.toJS()));
+  return AsyncStorage.setItem(KEY, JSON.stringify(data.toJS()));
 };
 
 export function* saveVaccinationsAsync(getState) {
