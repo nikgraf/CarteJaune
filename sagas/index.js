@@ -1,10 +1,15 @@
-import { fork } from 'redux-saga';
-import saveVaccinationsAsync from './saveVaccinationsAsync';
-import fetchVaccinationsAsync from './fetchVaccinationsAsync';
+import { fork } from 'redux-saga/effects';
+import { watchAddVaccination } from './saveVaccinations';
+import { watchFetchVaccinations } from './fetchVaccinations';
 import startup from './startup';
 
-export default function* root(getState) {
-  yield fork(saveVaccinationsAsync, getState);
-  yield fork(fetchVaccinationsAsync);
-  yield fork(startup);
+/*
+ * The entry point for all the sagas used in this application.
+ */
+export default function* root() {
+  yield [
+    fork(watchAddVaccination),
+    fork(watchFetchVaccinations),
+    fork(startup),
+  ];
 }

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { put } from 'redux-saga';
+import { put } from 'redux-saga/effects';
 import fetchVaccinations from '../../actions/fetchVaccinations';
 import startup from '../startup';
 

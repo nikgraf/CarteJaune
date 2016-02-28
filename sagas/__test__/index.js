@@ -1,17 +1,18 @@
 import { expect } from 'chai';
-import { fork } from 'redux-saga';
+import { fork } from 'redux-saga/effects';
 import root from '../index';
-import fetchVaccinationsAsync from '../fetchVaccinationsAsync';
-import saveVaccinationsAsync from '../saveVaccinationsAsync';
+import { watchFetchVaccinations } from '../fetchVaccinations';
+import { watchAddVaccination } from '../saveVaccinations';
 import startup from '../startup';
 
 describe('root', () => {
   it('should fork all the generators', () => {
-    const getState = () => null;
-    const generator = root(getState);
-
-    expect(generator.next().value).to.deep.equal(fork(saveVaccinationsAsync, getState));
-    expect(generator.next().value).to.deep.equal(fork(fetchVaccinationsAsync));
-    expect(generator.next().value).to.deep.equal(fork(startup));
+    const generator = root();
+    const expected = [
+      fork(watchAddVaccination),
+      fork(watchFetchVaccinations),
+      fork(startup),
+    ];
+    expect(generator.next().value).to.deep.equal(expected);
   });
 });
