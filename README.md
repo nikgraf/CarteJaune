@@ -2,6 +2,8 @@
 
 A Redux/ExponentJS (React Native) app to keep track of your vaccinations.
 
+[![Build Status](https://travis-ci.org/nikgraf/CarteJaune.svg?branch=master)](https://travis-ci.org/nikgraf/CarteJaune)
+
 ## Install
 
 `npm Install`
