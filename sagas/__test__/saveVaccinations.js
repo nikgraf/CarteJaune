@@ -22,9 +22,10 @@ describe('saveVaccination', () => {
   describe('saveVaccination', () => {
     it('saves the vaccinations to the store and triggers addVaccinationSuccess', () => {
       const generator = saveVaccinations();
-      const expectedSelect = select(vaccinationsSelector);
-      const callValue = generator.next().value;
-      expect(callValue).to.deep.equal(call(executeSaveVaccinations, expectedSelect));
+      const selectValue = generator.next().value;
+      expect(selectValue).to.deep.equal(select(vaccinationsSelector));
+      const callValue = generator.next({ 1: 2 }).value;
+      expect(callValue).to.deep.equal(call(executeSaveVaccinations, { 1: 2 }));
       const putValue = generator.next().value;
       expect(putValue).to.deep.equal(put(addVaccinationSuccess()));
     });

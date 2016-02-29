@@ -19,7 +19,7 @@ export const executeSaveVaccinations = (data) => (
  */
 export function* saveVaccinations() {
   try {
-    const vaccinations = select(vaccinationsSelector);
+    const vaccinations = yield select(vaccinationsSelector);
     yield call(executeSaveVaccinations, vaccinations);
     yield put(addVaccinationSuccess());
   } catch (error) {
