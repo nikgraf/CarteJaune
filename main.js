@@ -4,7 +4,7 @@ import React, {
   Navigator,
 } from 'react-native';
 import configureStore from './store/configureStore';
-import { Provider } from 'react-redux/native';
+import { Provider } from 'react-redux';
 import { Router, Route } from 'react-native-router-flux';
 import ChooseVaccine from './containers/ChooseVaccine';
 import ChooseDate from './containers/ChooseDate';
