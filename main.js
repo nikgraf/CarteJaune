@@ -1,11 +1,11 @@
-import React, {
+import React, { Component } from 'react';
+import {
   AppRegistry,
-  Component,
   Navigator,
 } from 'react-native';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-native-router-flux';
+import { Scene, Router } from 'react-native-router-flux';
 import ChooseVaccine from './containers/ChooseVaccine';
 import ChooseDate from './containers/ChooseDate';
 import List from './containers/List';
@@ -18,21 +18,25 @@ class ProviderWrapper extends Component {
     return (
       <Provider store={store}>
         <Router hideNavBar name="root">
-          <Route name="list" component={List} title="List" />
-          <Route
-            name="chooseVaccine"
+          <Scene
+            key="list"
+            component={List}
+            title="List"
+          />
+          <Scene
+            key="chooseVaccine"
             component={ChooseVaccine}
             title="Pick a Vaccine"
             sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
           />
-          <Route
-            name="chooseDate"
+          <Scene
+            key="chooseDate"
             component={ChooseDate}
             title="Pick a Date"
             sceneConfig={Navigator.SceneConfigs.FloatFromRight}
           />
-          <Route
-            name="detail"
+          <Scene
+            key="detail"
             component={Detail}
             title="Detail"
             sceneConfig={Navigator.SceneConfigs.FloatFromRight}

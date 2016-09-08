@@ -1,5 +1,5 @@
-import React, {
-  Component,
+import React, { Component } from 'react';
+import {
   ListView,
   Text,
   TouchableOpacity,
@@ -37,6 +37,7 @@ export default class ChooseVaccine extends Component {
       <View style={styles.container}>
         <Text style={styles.header}>Pick a Vaccine</Text>
         <ListView
+          enableEmptySections
           dataSource={this.state.dataSource}
           renderRow={this.renderItem.bind(this)}
           style={styles.listView}

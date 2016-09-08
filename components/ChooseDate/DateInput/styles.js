@@ -19,11 +19,4 @@ export default StyleSheet.create({
     height: 20,
     textAlign: 'center',
   },
-  datepicker: {
-    alignItems: 'center',
-    backgroundColor: '#FFF',
-    marginLeft: 10,
-    marginRight: 10,
-    borderRadius: 3,
-  },
 });

@@ -1,4 +1,4 @@
-import React, { Component } from 'react-native';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Detail from '../components/Detail';
@@ -15,7 +15,7 @@ const selectors = {
   vaccines,
 };
 
-export default class DetailContainer extends Component {
+class DetailContainer extends Component {
   render() {
     return <Detail {...this.props} />;
   }
