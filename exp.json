@@ -6,13 +6,13 @@
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
-  "iconUrl": "https://s3-us-west-2.amazonaws.com/votexp/carte-jaune-logo.png",
+  "iconUrl": "https://s3-us-west-2.amazonaws.com/votexp/carte-jaune-logo-big.png",
   "notification": {
     "iconUrl": "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon-blue-circle.png",
     "color": "#000000"
   },
   "loading": {
-    "iconUrl": "https://s3-us-west-2.amazonaws.com/votexp/carte-jaune-logo.png",
+    "iconUrl": "https://s3-us-west-2.amazonaws.com/votexp/carte-jaune-logo-big.png",
     "hideExponentText": false
   },
   "packagerOpts": {
