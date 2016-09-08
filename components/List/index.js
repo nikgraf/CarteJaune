@@ -48,7 +48,10 @@ export default class List extends Component {
       <View>
         <View style={styles.header}>
           <Logo style={styles.logo} />
-          <Text style={styles.headerText}>Carte Jaune</Text>
+
+          <Text style={styles.headerText} numberOfLines={1}>
+            Carte Jaune
+          </Text>
         </View>
         <Text style={styles.label}>Vaccines</Text>
       </View>
