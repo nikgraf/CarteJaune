@@ -1,5 +1,7 @@
 import React, {
-  Component,
+  Component
+} from 'react';
+import {
   Text,
   View,
 } from 'react-native';
@@ -8,7 +10,6 @@ import Button from '../Button';
 import DateInput from './DateInput';
 
 export default class ChooseDate extends Component {
-
   state = {
     vaccinationDate: new Date(),
     isValidDate: true,
@@ -34,7 +35,10 @@ export default class ChooseDate extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Pick the Vaccination Date</Text>
+        <Text style={styles.header}>
+          Pick the Vaccination Date
+        </Text>
+
         <DateInput
           date={this.state.vaccinationDate}
           onDateChange={this.onUpdateDate.bind(this)}
@@ -42,7 +46,7 @@ export default class ChooseDate extends Component {
         />
         <Button
           disabled={!this.state.isValidDate}
-          onPress={ this.onPress.bind(this) }
+          onPress={this.onPress.bind(this)}
           style={styles.addButton}
         >
           <Text>Add Vaccination</Text>

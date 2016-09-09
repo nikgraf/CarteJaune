@@ -1,5 +1,5 @@
-import React, {
-  Component,
+import React, { Component } from 'react';
+import {
   ListView,
   Text,
   TouchableOpacity,
@@ -48,7 +48,10 @@ export default class List extends Component {
       <View>
         <View style={styles.header}>
           <Logo style={styles.logo} />
-          <Text style={styles.headerText}>Carte Jaune</Text>
+
+          <Text style={styles.headerText} numberOfLines={1}>
+            Carte Jaune
+          </Text>
         </View>
         <Text style={styles.label}>Vaccines</Text>
       </View>
@@ -109,6 +112,7 @@ export default class List extends Component {
   render() {
     return (
       <ListView
+        enableEmptySections
         dataSource={this.state.dataSource}
         renderRow={this.renderItem.bind(this)}
         style={styles.listView}

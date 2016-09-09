@@ -1,4 +1,4 @@
-import React, { Component } from 'react-native';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import ChooseDate from '../components/ChooseDate';
@@ -13,7 +13,7 @@ const selectors = {
   addForm,
 };
 
-export default class ChooseDateContainer extends Component {
+class ChooseDateContainer extends Component {
   render() {
     return <ChooseDate {...this.props} />;
   }
