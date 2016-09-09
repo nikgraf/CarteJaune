@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class Card extends Component {
   render() {
     return (

@@ -23,7 +23,7 @@ export default class ChooseVaccine extends Component {
 
   renderItem(vaccine) {
     return (
-      <TouchableOpacity onPress={ () => this.props.pickVaccine(vaccine.id) }>
+      <TouchableOpacity onPress={() => this.props.pickVaccine(vaccine.id)}>
         <View style={styles.row}>
           <Text>{ vaccine.name }</Text>
           <Text style={styles.disease}>{ vaccine.diseases.join(', ')}</Text>

@@ -1,7 +1,7 @@
 import { AsyncStorage } from 'react-native';
-import { ADD_VACCINATION } from '../constants/actions';
-import { call, put, select } from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga';
+import { call, put, select } from 'redux-saga/effects';
+import { ADD_VACCINATION } from '../constants/actions';
 import addVaccinationSuccess from '../actions/addVaccinationSuccess';
 import addVaccinationFailure from '../actions/addVaccinationFailure';
 import { KEY } from '../constants/storage';

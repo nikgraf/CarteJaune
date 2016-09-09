@@ -43,6 +43,7 @@ export default class List extends Component {
       .join(', ');
   }
 
+  // eslint-disable-next-line class-methods-use-this
   renderHeader() {
     return (
       <View>
@@ -77,8 +78,8 @@ export default class List extends Component {
           onPress={this.props.switchToChooseVaccineRoute}
           style={styles.addButton}
         >
-            <Text style={styles.plus}>+</Text>
-            <Text style={styles.addText}>Add Vaccination</Text>
+          <Text style={styles.plus}>+</Text>
+          <Text style={styles.addText}>Add Vaccination</Text>
         </Button>
         <Text style={styles.promo}>Made with ♡ by Nik Graf</Text>
         <Text style={styles.smallPromo}>
@@ -97,7 +98,7 @@ export default class List extends Component {
 
   renderItem(vaccination) {
     return (
-      <TouchableOpacity onPress={ () => this.props.switchToDetailRoute(vaccination.listId) }>
+      <TouchableOpacity onPress={() => this.props.switchToDetailRoute(vaccination.listId)}>
         <Card style={styles.container}>
           <Text style={styles.name}>{vaccination.vaccine.name}</Text>
           <Text style={styles.disease}>{ vaccination.vaccine.diseases.join(', ')}</Text>

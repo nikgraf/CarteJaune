@@ -1,9 +1,9 @@
 import { OrderedMap, Map } from 'immutable';
+import uuid from 'uuid';
 import {
   ADD_VACCINATION,
   FETCH_VACCINATIONS_SUCCESS,
 } from '../constants/actions';
-import uuid from 'uuid';
 
 export default (state = OrderedMap(), action) => {
   switch (action.type) {

@@ -3,8 +3,8 @@ import {
   DatePickerIOS,
 } from 'react-native';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class CustomDatePickerIOS extends Component {
-
   render() {
     return (
       <DatePickerIOS

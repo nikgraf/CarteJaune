@@ -1,3 +1,4 @@
+import { Actions } from 'react-native-router-flux';
 import {
   ADD_VACCINATION_SUCCESS,
   PICK_VACCINE,
@@ -5,7 +6,6 @@ import {
   SWITCH_TO_DETAIL_ROUTE,
   SWITCH_TO_LIST_ROUTE,
 } from '../constants/actions';
-import { Actions } from 'react-native-router-flux';
 
 export default (state = 'list', action) => {
   switch (action.type) {

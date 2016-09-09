@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducer from '../reducers';
 import sagaMiddleware from 'redux-saga';
-import sagas from '../sagas';
 import createLogger from 'redux-logger';
+import reducer from '../reducers';
+import sagas from '../sagas';
 
 const loggerMiddleware = createLogger({
   stateTransformer: state => state.toJS(),

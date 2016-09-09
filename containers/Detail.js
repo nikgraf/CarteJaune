@@ -15,6 +15,7 @@ const selectors = {
   vaccines,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class DetailContainer extends Component {
   render() {
     return <Detail {...this.props} />;

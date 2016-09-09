@@ -1,11 +1,11 @@
 import { expect } from 'chai';
+import { call, take, put, select } from 'redux-saga/effects';
 import {
   executeSaveVaccinations,
   saveVaccinations,
   watchAddVaccination,
 } from '../saveVaccinations';
 import { ADD_VACCINATION } from '../../constants/actions';
-import { call, take, put, select } from 'redux-saga/effects';
 import addVaccinationSuccess from '../../actions/addVaccinationSuccess';
 import addVaccinationFailure from '../../actions/addVaccinationFailure';
 import vaccinationsSelector from '../../selectors/vaccinations';

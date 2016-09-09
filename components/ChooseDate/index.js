@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 import Button from '../Button';
+// eslint-disable-next-line import/no-unresolved
 import DateInput from './DateInput';
 
 export default class ChooseDate extends Component {
