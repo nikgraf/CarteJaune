@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {
   DatePickerIOS,
-  View,
 } from 'react-native';
-import styles from './styles';
 
 export default class CustomDatePickerIOS extends Component {
 

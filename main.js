@@ -1,4 +1,4 @@
-import Exponent from 'exponent';
+import Exponent from 'exponent'; // eslint-disable-line no-unused-vars
 import React, { Component } from 'react';
 import {
   AppRegistry,
