@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {
   DatePickerIOS,
-  View,
 } from 'react-native';
-import styles from './styles';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class CustomDatePickerIOS extends Component {
-
   render() {
     return (
       <DatePickerIOS

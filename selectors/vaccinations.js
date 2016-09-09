@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
-import shallowVaccines from './vaccines';
 import { Map } from 'immutable';
+import shallowVaccines from './vaccines';
 
 const shallowVaccinations = (state) => state.get('vaccinations');
 

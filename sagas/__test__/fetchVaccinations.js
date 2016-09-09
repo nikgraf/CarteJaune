@@ -1,11 +1,11 @@
 import { expect } from 'chai';
+import { call, put, take } from 'redux-saga/effects';
 import {
   executeFetchVaccinations,
   fetchVaccinations,
   watchFetchVaccinations,
 } from '../fetchVaccinations';
 import { FETCH_VACCINATIONS } from '../../constants/actions';
-import { call, put, take } from 'redux-saga/effects';
 import fetchVaccinationsSuccess from '../../actions/fetchVaccinationsSuccess';
 import fetchVaccinationsFailure from '../../actions/fetchVaccinationsFailure';
 

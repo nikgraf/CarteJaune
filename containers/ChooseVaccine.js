@@ -13,6 +13,7 @@ const selectors = {
   vaccines,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class ChooseVaccineContainer extends Component {
   render() {
     return <ChooseVaccine {...this.props} />;

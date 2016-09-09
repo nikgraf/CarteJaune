@@ -13,6 +13,7 @@ const selectors = {
   addForm,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class ChooseDateContainer extends Component {
   render() {
     return <ChooseDate {...this.props} />;

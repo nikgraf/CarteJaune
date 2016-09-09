@@ -1,11 +1,11 @@
 import { AsyncStorage } from 'react-native';
-import { FETCH_VACCINATIONS } from '../constants/actions';
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
+import { fromJS, OrderedMap } from 'immutable';
+import { FETCH_VACCINATIONS } from '../constants/actions';
 import fetchVaccinationsSuccess from '../actions/fetchVaccinationsSuccess';
 import fetchVaccinationsFailure from '../actions/fetchVaccinationsFailure';
 import { KEY } from '../constants/storage';
-import { fromJS, OrderedMap } from 'immutable';
 
 /**
  * Returns a promise of the actual fetching from the persitent storage.
